@@ -188,3 +188,31 @@ const copyPlayers = [...players3];
 copyPlayers.sort((prevPlayer, nextPlayer) => {
   return prevPlayer.name.localeCompare(nextPlayer.name);
 });
+
+
+const filteredPrice = players3.reduce((acc, player) => {
+  if (player.timePlayed >= 100) {
+    acc.push(player.timePlayed)     
+  }
+  return acc
+}, [])
+console.log(filteredPrice)
+
+
+// const filteredLemons = players3.reduce((acc, player) => {
+//   if (player.name === "Kiwi") {
+//       acc.push(player)
+//   }
+//   return acc
+// }, [])
+// console.log(...filteredLemons)
+
+
+const filteredLemons = players3.reduce((acc, player) => {
+  if (player.name === "Kiwi") {
+    // const playerToFind = { ...player }
+    acc = {...player}
+  }
+  return acc
+}, {})
+console.log(filteredLemons)
