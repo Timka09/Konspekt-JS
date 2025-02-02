@@ -70,3 +70,43 @@ articleElement.append(titleArcticle, discriptionRecipe, photoPanCakes, linkA);
 const page = document.querySelector("body")
 
 page.append(articleElement)
+
+
+// Методи додавання елементів на сторінку дом
+const box = document.querySelector(".container")
+console.log(box)
+const link = document.querySelector("img")
+const button = document.createElement("button")
+box.append(button) // Метод append() - додає кнопку в середину елементу, та після всіх дітей
+
+box.prepend(button); // Метод prepend() - додає кнопку в середину елементу, та перед всіма дітьми
+
+// Метод after() - ставить елемент після елемента на якому викликається метод
+box.after(button)
+
+// Метод before() - ставить елемент перед елементом на якому викликається метод
+box.before(button)
+
+// Метод parentElem.insertBefore(elem, nextElem) - додає елемент між вказаними елементамиэ
+box.insertBefore(button, link)
+
+// Метод innerHTML - перезаписує розмітку у хтмл коді, якщо викликано у середині елементу. Або можно створити розмітку просто викликав його
+
+console.log(box.innerHTML)
+box.innerHTML = `<img src="" alt="">`
+console.log(box.innerHTML)
+box.innerHTML = ""
+
+const layOut = `
+<ul class="list">
+  <li class="list_item"></li>
+  <li class="list_item"></li>
+  <li class="list_item"></li>
+  <li class="list_item"></li>
+  <li class="list_item"></li>
+  <li class="list_item"></li>
+</ul>`;
+
+// box.innerHTML = layOut
+// Метод insertAdjacentHTML() - вставляє шаблону розмітку у вказаний елемент, без стирання минулого коду
+
